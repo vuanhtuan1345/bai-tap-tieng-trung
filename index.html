@@ -3,213 +3,361 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bài Tập Nghe Tiếng Trung - Bài 8 | ❤️ TUAN - Học Tiếng Trung</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>❤️ TUAN - Học Tiếng Trung</title>
     <style>
         :root {
-            --primary: #FF5A5F;
-            --primary-light: #FFF0F1;
-            --secondary: #00A699;
-            --secondary-light: #E6F6F5;
-            --pinyin-color: #2563EB;
-            --bg-main: #F7F9FC;
-            --card-bg: #FFFFFF;
-            --border-color: #E2E8F0;
+            --primary-color: #e74c3c;
+            --secondary-color: #2980b9;
+            --bg-color: #f4f7f6;
+            --text-color: #333;
         }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Inter', -apple-system, sans-serif; background-color: var(--bg-main); color: #222; line-height: 1.6; padding: 20px; }
-        .container { max-width: 900px; margin: 0 auto; }
-        header { background: linear-gradient(135deg, #FF5A5F 0%, #FF7E5F 100%); color: white; padding: 30px 25px; border-radius: 20px; text-align: center; box-shadow: 0 10px 25px rgba(255, 90, 95, 0.2); margin-bottom: 30px; }
-        header h1 { font-size: 26px; font-weight: 700; margin-bottom: 8px; }
-        .teacher-badge { display: inline-block; background: rgba(255, 255, 255, 0.25); padding: 6px 16px; border-radius: 20px; font-size: 13px; font-weight: 600; margin-top: 12px; }
-        .section-card { background: var(--card-bg); border-radius: 16px; padding: 24px; margin-bottom: 25px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04); border: 1px solid var(--border-color); }
-        .file-tag { display: inline-flex; background: var(--primary-light); color: var(--primary); font-weight: 700; padding: 6px 14px; border-radius: 10px; font-size: 14px; margin-bottom: 12px; }
-        .file-tag.green { background: var(--secondary-light); color: var(--secondary); }
-        .section-title { font-size: 18px; font-weight: 700; margin-bottom: 12px; }
-        .audio-player-box { background: #F8FAFC; border: 1px solid #E2E8F0; padding: 10px 14px; border-radius: 12px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 6px; }
-        .audio-player-box label { font-size: 12px; font-weight: 700; color: #64748B; text-transform: uppercase; }
-        .audio-player-box audio { width: 100%; height: 40px; }
-        .item-list { display: flex; flex-direction: column; gap: 12px; }
-        .item-box { background: #F8FAFC; border-radius: 12px; padding: 14px 18px; border-left: 4px solid var(--primary); }
-        .item-box.green { border-left-color: var(--secondary); }
-        .zh-text { font-family: 'Noto Sans SC', sans-serif; font-size: 18px; font-weight: 700; color: #1E293B; }
-        .pinyin-text { font-size: 14px; color: var(--pinyin-color); font-weight: 500; }
-        .vi-text { font-size: 14px; color: #484848; }
-        .grid-clock { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; }
-        .clock-card { background: #F8FAFC; padding: 12px 16px; border-radius: 12px; border: 1px solid #E2E8F0; display: flex; align-items: center; gap: 12px; }
-        .clock-num { background: var(--primary); color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13px; flex-shrink: 0; }
-        .dialogue-container { display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px; }
-        .chat-bubble { padding: 12px 16px; border-radius: 14px; max-width: 90%; }
-        .chat-a { background: #F1F5F9; align-self: flex-start; }
-        .chat-b { background: var(--primary-light); align-self: flex-end; }
-        .speaker-name { font-weight: 700; font-size: 12px; color: #64748B; margin-bottom: 4px; }
-        .questions-box { background: #FFFBEB; border: 1px solid #FDE68A; border-radius: 12px; padding: 16px; margin-top: 15px; }
-        footer { text-align: center; padding: 20px; color: #94A3B8; font-size: 13px; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 20px;
+            margin: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+        }
+        h1 {
+            text-align: center;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+        }
+        .controls {
+            text-align: center;
+            margin: 20px 0;
+            position: sticky;
+            top: 10px;
+            z-index: 100;
+        }
+        button {
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            transition: background 0.3s;
+        }
+        button:hover {
+            background-color: #1f6391;
+        }
+        .lesson-card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        .lesson-title {
+            color: var(--secondary-color);
+            margin-top: 0;
+        }
+        audio {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        .sentence-group {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #ccc;
+        }
+        .sentence-group:last-child {
+            border-bottom: none;
+        }
+        .hanzi {
+            font-size: 24px;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        .pinyin {
+            font-size: 18px;
+            color: #16a085;
+            font-style: italic;
+            margin-bottom: 5px;
+        }
+        .vietnamese {
+            font-size: 16px;
+            color: #7f8c8d;
+        }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <header>
-        <h1>Giáo Trình Bài Tập Nghe Hán Ngữ</h1>
-        <p>Tổng hợp & Biên dịch chi tiết (Chữ Hán - Pinyin - Tiếng Việt)</p>
-        <div class="teacher-badge">❤️ TUAN - Học Tiếng Trung</div>
-    </header>
+    <h1>❤️ TUAN - Luyện Nghe Tiếng Trung</h1>
+    
+    <div class="controls">
+        <button onclick="toggleElement('pinyin')">👁️ Ẩn/Hiện Pinyin</button>
+        <button onclick="toggleElement('vietnamese')">👁️ Ẩn/Hiện Nghĩa Tiếng Việt</button>
+    </div>
 
-    <!-- FILE 8.4 -->
-    <div class="section-card">
-        <div class="file-tag">🎧 File 8.4.mp3</div>
-        <div class="section-title"><span>Bài 8.4: Nghe thời gian và nhận biết đồng hồ</span></div>
-        <div class="audio-player-box">
-            <label>▶️ Nghe Audio bài 8.4</label>
-            <audio controls preload="none">
-                <source src="8.4.mp3" type="audio/mpeg">
-            </audio>
+    <!-- BÀI 1 -->
+    <div class="lesson-card">
+        <h2 class="lesson-title">Bài 1: Nghe và điền vào chỗ trống</h2>
+        <audio controls src="22-6.mp3"></audio>
+        
+        <div class="sentence-group">
+            <div class="hanzi">听说句子。一、听录音填空，可以写拼音。</div>
+            <div class="pinyin">Tīngshuō jùzi. Yī, tīng lùyīn tiánkòng, kěyǐ xiě pīnyīn.</div>
+            <div class="vietnamese">Nghe nói câu. Một, nghe ghi âm điền vào chỗ trống, có thể viết pinyin.</div>
         </div>
-        <div class="grid-clock">
-            <div class="clock-card"><div class="clock-num">1</div><div><div class="zh-text">1点</div><div class="pinyin-text">yī diǎn</div><div class="vi-text">1 giờ đúng</div></div></div>
-            <div class="clock-card"><div class="clock-num">2</div><div><div class="zh-text">6点30分</div><div class="pinyin-text">liù diǎn sānshí fēn</div><div class="vi-text">6 giờ 30 phút (6 rưỡi)</div></div></div>
-            <div class="clock-card"><div class="clock-num">3</div><div><div class="zh-text">9点10分</div><div class="pinyin-text">jiǔ diǎn shí fēn</div><div class="vi-text">9 giờ 10 phút</div></div></div>
-            <div class="clock-card"><div class="clock-num">4</div><div><div class="zh-text">10点15分</div><div class="pinyin-text">shí diǎn shíwǔ fēn</div><div class="vi-text">10 giờ 15 phút (10h15)</div></div></div>
-            <div class="clock-card"><div class="clock-num">5</div><div><div class="zh-text">8点45分</div><div class="pinyin-text">bā diǎn sìshíwǔ fēn</div><div class="vi-text">8 giờ 45 phút (9h kém 15)</div></div></div>
-            <div class="clock-card"><div class="clock-num">6</div><div><div class="zh-text">3点05分</div><div class="pinyin-text">sān diǎn líng wǔ fēn</div><div class="vi-text">3 giờ 05 phút</div></div></div>
-            <div class="clock-card"><div class="clock-num">7</div><div><div class="zh-text">7点40分</div><div class="pinyin-text">qī diǎn sìshí fēn</div><div class="vi-text">7 giờ 40 phút (8h kém 20)</div></div></div>
-            <div class="clock-card"><div class="clock-num">8</div><div><div class="zh-text">5点02分</div><div class="pinyin-text">wǔ diǎn líng èr fēn</div><div class="vi-text">5 giờ 02 phút</div></div></div>
-            <div class="clock-card"><div class="clock-num">9</div><div><div class="zh-text">2点20</div><div class="pinyin-text">liǎng diǎn èrshí</div><div class="vi-text">2 giờ 20 phút</div></div></div>
-            <div class="clock-card"><div class="clock-num">10</div><div><div class="zh-text">3点25分</div><div class="pinyin-text">sān diǎn èrshíwǔ fēn</div><div class="vi-text">3 giờ 25 phút</div></div></div>
+        <div class="sentence-group">
+            <div class="hanzi">1. 我们明天下了课去看展览吧。</div>
+            <div class="pinyin">1. Wǒmen míngtiān xiàle kè qù kàn zhǎnlǎn ba.</div>
+            <div class="vietnamese">1. Ngày mai học xong chúng ta đi xem triển lãm nhé.</div>
+        </div>
+        <div class="sentence-group">
+            <div class="hanzi">2. 明天的聚会是这样安排的。</div>
+            <div class="pinyin">2. Míngtiān de jùhuì shì zhèyàng ānpái de.</div>
+            <div class="vietnamese">2. Buổi liên hoan ngày mai được sắp xếp như thế này.</div>
+        </div>
+        <div class="sentence-group">
+            <div class="hanzi">3. 六点半在宿舍门口见面吧。</div>
+            <div class="pinyin">3. Liù diǎn bàn zài sùshè ménkǒu jiànmiàn ba.</div>
+            <div class="vietnamese">3. Sáu rưỡi gặp nhau ở cổng ký túc xá nhé.</div>
+        </div>
+        <div class="sentence-group">
+            <div class="hanzi">4. 他刚到北京就来看你了。</div>
+            <div class="pinyin">4. Tā gāng dào Běijīng jiù lái kàn nǐ le.</div>
+            <div class="vietnamese">4. Cậu ấy vừa đến Bắc Kinh là đến thăm cậu luôn.</div>
+        </div>
+        <div class="sentence-group">
+            <div class="hanzi">5. 我是跟你开玩笑的，你别生气。</div>
+            <div class="pinyin">5. Wǒ shì gēn nǐ kāi wánxiào de, nǐ bié shēngqì.</div>
+            <div class="vietnamese">5. Tớ đùa với cậu thôi, cậu đừng tức giận.</div>
+        </div>
+        <div class="sentence-group">
+            <div class="hanzi">6. 你放心吧，他没有意见。</div>
+            <div class="pinyin">6. Nǐ fàngxīn ba, tā méiyǒu yìjiàn.</div>
+            <div class="vietnamese">6. Cậu yên tâm đi, cậu ấy không có ý kiến gì đâu.</div>
+        </div>
+        <div class="sentence-group">
+            <div class="hanzi">7. 下午马克约我去打篮球呢。</div>
+            <div class="pinyin">7. Xiàwǔ Mǎkè yuē wǒ qù dǎ lánqiú ne.</div>
+            <div class="vietnamese">7. Buổi chiều Mark hẹn tớ đi đánh bóng rổ.</div>
+        </div>
+        <div class="sentence-group">
+            <div class="hanzi">8. 天气这么热，打什么球呀？</div>
+            <div class="pinyin">8. Tiānqì zhème rè, dǎ shénme qiú ya?</div>
+            <div class="vietnamese">8. Thời tiết nóng thế này, đánh bóng gì chứ?</div>
         </div>
     </div>
 
-    <!-- FILE 8.5 -->
-    <div class="section-card">
-        <div class="file-tag green">🎧 File 8.5.mp3</div>
-        <div class="section-title"><span>Bài 8.5: Nghe câu và điền vào chỗ trống</span></div>
-        <div class="audio-player-box">
-            <label>▶️ Nghe Audio bài 8.5</label>
-            <audio controls preload="none">
-                <source src="8.5.mp3" type="audio/mpeg">
-            </audio>
+    <!-- BÀI 2 -->
+    <div class="lesson-card">
+        <h2 class="lesson-title">Bài 2: Nghe câu và chọn đáp án</h2>
+        <audio controls src="22-7.mp3"></audio>
+        
+        <div class="sentence-group">
+            <div class="hanzi">二、听句子，选择正确的回答</div>
+            <div class="pinyin">Èr, tīng jùzi, xuǎnzé zhèngquè de huídá</div>
+            <div class="vietnamese">Hai, Nghe câu, chọn câu trả lời đúng.</div>
         </div>
-        <div class="item-list">
-            <div class="item-box green"><div class="zh-text">1. 现在几点？</div><div class="pinyin-text">Xiànzài jǐ diǎn?</div><div class="vi-text">Bây giờ là mấy giờ?</div></div>
-            <div class="item-box green"><div class="zh-text">2. 今天上午我有课。</div><div class="pinyin-text">Jīntiān shàngwǔ wǒ yǒu kè.</div><div class="vi-text">Sáng nay tôi có tiết học.</div></div>
-            <div class="item-box green"><div class="zh-text">3. 晚上七点半吃饭。</div><div class="pinyin-text">Wǎnshang qī diǎn bàn chīfàn.</div><div class="vi-text">7 giờ rưỡi tối ăn cơm.</div></div>
-            <div class="item-box green"><div class="zh-text">4. 明天晚上我没有时间。</div><div class="pinyin-text">Míngtiān wǎnshang wǒ méiyǒu shíjiān.</div><div class="vi-text">Tối mai tôi không rảnh / không có thời gian.</div></div>
-            <div class="item-box green"><div class="zh-text">5. 你有什么事？</div><div class="pinyin-text">Nǐ yǒu shénme shì?</div><div class="vi-text">Bạn có việc gì thế?</div></div>
-            <div class="item-box green"><div class="zh-text">6. 下午两点我去见汉语辅导老师。</div><div class="pinyin-text">Xiàwǔ liǎng diǎn wǒ qù jiàn Hànyǔ fǔdǎo lǎoshī.</div><div class="vi-text">2 giờ chiều tôi đi gặp gia sư tiếng Trung.</div></div>
-            <div class="item-box green"><div class="zh-text">7. 明天上午你没有课吧？</div><div class="pinyin-text">Míngtiān shàngwǔ nǐ méiyǒu kè ba?</div><div class="vi-text">Sáng mai bạn không có tiết học đúng không?</div></div>
-            <div class="item-box green"><div class="zh-text">8. 今天晚上是她的生日，一起吃饭吧。</div><div class="pinyin-text">Jīntiān wǎnshang shì tā de shēngrì, yìqǐ chīfàn ba.</div><div class="vi-text">Tối nay là sinh nhật cô ấy, cùng đi ăn cơm nhé.</div></div>
+        <div class="sentence-group">
+            <div class="hanzi">1. 你昨天去打篮球了吗？</div>
+            <div class="pinyin">1. Nǐ zuótiān qù dǎ lánqiú le ma?</div>
+            <div class="vietnamese">1. Hôm qua cậu có đi đánh bóng rổ không?</div>
         </div>
-    </div>
-
-    <!-- FILE 8.6 -->
-    <div class="section-card">
-        <div class="file-tag">🎧 File 8.6.mp3</div>
-        <div class="section-title"><span>Bài 8.6: Nghe câu hỏi và lựa chọn đáp án</span></div>
-        <div class="audio-player-box">
-            <label>▶️ Nghe Audio bài 8.6</label>
-            <audio controls preload="none">
-                <source src="8.6.mp3" type="audio/mpeg">
-            </audio>
+        <div class="sentence-group">
+            <div class="hanzi">2. 周末去爬山的同学还有谁呀？</div>
+            <div class="pinyin">2. Zhōumò qù páshān de tóngxué hái yǒu shéi ya?</div>
+            <div class="vietnamese">2. Các bạn học sinh đi leo núi cuối tuần còn có những ai?</div>
         </div>
-        <div class="item-list">
-            <div class="item-box"><div class="zh-text">1. 你明天几点上课？</div><div class="pinyin-text">Nǐ míngtiān jǐ diǎn shàngkè?</div><div class="vi-text">Ngày mai mấy giờ bạn vào lớp/đi học?</div></div>
-            <div class="item-box"><div class="zh-text">2. 今天下午你有事吗？</div><div class="pinyin-text">Jīntiān xiàwǔ nǐ yǒu shì ma?</div><div class="vi-text">Chiều nay bạn có việc gì không?</div></div>
-            <div class="item-box"><div class="zh-text">3. 中午在哪儿吃饭？</div><div class="pinyin-text">Zhōngwǔ zài nǎr chīfàn?</div><div class="vi-text">Buổi trưa ăn cơm ở đâu?</div></div>
-            <div class="item-box"><div class="zh-text">4. 明天晚上8点见。</div><div class="pinyin-text">Míngtiān wǎnshang bā diǎn jiàn.</div><div class="vi-text">8 giờ tối mai gặp nhé.</div></div>
-            <div class="item-box"><div class="zh-text">5. 晚上一起去吃饭吧。</div><div class="pinyin-text">Wǎnshang yìqǐ qù chīfàn ba.</div><div class="vi-text">Tối nay cùng đi ăn cơm nhé.</div></div>
-            <div class="item-box"><div class="zh-text">6. 你有汉语辅导老师吗？</div><div class="pinyin-text">Nǐ yǒu Hànyǔ fǔdǎo lǎoshī ma?</div><div class="vi-text">Bạn có gia sư (trợ giảng) tiếng Trung không?</div></div>
+        <div class="sentence-group">
+            <div class="hanzi">3. 下了课咱们去看展览怎么样？</div>
+            <div class="pinyin">3. Xiàle kè zánmen qù kàn zhǎnlǎn zěnmeyàng?</div>
+            <div class="vietnamese">3. Học xong chúng ta đi xem triển lãm thì sao?</div>
+        </div>
+        <div class="sentence-group">
+            <div class="hanzi">4. 今天吃了晚饭以后你打算干什么？</div>
+            <div class="pinyin">4. Jīntiān chīle wǎnfàn yǐhòu nǐ dǎsuàn gàn shénme?</div>
+            <div class="vietnamese">4. Hôm nay sau khi ăn tối xong cậu định làm gì?</div>
+        </div>
+        <div class="sentence-group">
+            <div class="hanzi">5. 今天我们宿舍有个聚会，你也来玩儿吧。</div>
+            <div class="pinyin">5. Jīntiān wǒmen sùshè yǒu ge jùhuì, nǐ yě lái wánr ba.</div>
+            <div class="vietnamese">5. Hôm nay ký túc xá chúng tớ có một buổi liên hoan, cậu cũng đến chơi nhé.</div>
         </div>
     </div>
 
-    <!-- FILE 8.8 -->
-    <div class="section-card">
-        <div class="file-tag green">🎧 File 8.8.mp3</div>
-        <div class="section-title"><span>Bài 8.8: Đoạn hội thoại 1 — 生日 (Sinh nhật Lệ Lệ)</span></div>
-        <div class="audio-player-box">
-            <label>▶️ Nghe Audio bài 8.8</label>
-            <audio controls preload="none">
-                <source src="8.8.mp3" type="audio/mpeg">
-            </audio>
+    <!-- BÀI 3 -->
+    <div class="lesson-card">
+        <h2 class="lesson-title">Bài 3: 你们开学了吗？ (Các bạn đã khai giảng chưa?)</h2>
+        <audio controls src="22-11.mp3"></audio>
+        
+        <div class="sentence-group">
+            <div class="hanzi">听说一段话。 1. 听录音，选择正确答案</div>
+            <div class="pinyin">Tīngshuō yíduàn huà. 1. Tīng lùyīn, xuǎnzé zhèngquè dá'àn</div>
+            <div class="vietnamese">Nghe nói một đoạn hội thoại. 1. Nghe ghi âm, chọn đáp án chính xác.</div>
         </div>
-        <div class="dialogue-container">
-            <div class="chat-bubble chat-a"><div class="speaker-name">Người A</div><div class="zh-text">李军，明天晚上你有时间吗？</div><div class="pinyin-text">Lǐ Jūn, míngtiān wǎnshang nǐ yǒu shíjiān ma?</div><div class="vi-text">Lý Quân, tối mai bạn có rảnh không?</div></div>
-            <div class="chat-bubble chat-b"><div class="speaker-name">李军 (Lý Quân)</div><div class="zh-text">有啊，什么事？</div><div class="pinyin-text">Yǒu a, shénme shì?</div><div class="vi-text">Có chứ, có chuyện gì vậy?</div></div>
-            <div class="chat-bubble chat-a"><div class="speaker-name">Người A</div><div class="zh-text">明天是丽丽的生日，我们一起吃饭吧。</div><div class="pinyin-text">Míngtiān shì Lìli de shēngrì, wǒmen yìqǐ chīfàn ba.</div><div class="vi-text">Ngày mai là sinh nhật Lệ Lệ, chúng mình cùng đi ăn cơm nhé.</div></div>
-            <div class="chat-bubble chat-b"><div class="speaker-name">李军 (Lý Quân)</div><div class="zh-text">好，几点？在哪儿？</div><div class="pinyin-text">Hǎo, jǐ diǎn? Zài nǎr?</div><div class="vi-text">Được thôi, mấy giờ? Ở đâu?</div></div>
-            <div class="chat-bubble chat-a"><div class="speaker-name">Người A</div><div class="zh-text">晚上六点半，在丽丽的宿舍。</div><div class="pinyin-text">Wǎnshang liù diǎn bàn, zài Lìli de sùshè.</div><div class="vi-text">6 rưỡi tối, ở ký túc xá của Lệ Lệ.</div></div>
+        <div class="sentence-group">
+            <div class="hanzi">第一段录音，你们开学了吗？</div>
+            <div class="pinyin">Dì yī duàn lùyīn, nǐmen kāixué le ma?</div>
+            <div class="vietnamese">Đoạn ghi âm thứ nhất, các cậu đã khai giảng chưa?</div>
         </div>
-        <div class="questions-box">
-            <h4>❓ Câu hỏi luyện tập (问)</h4>
-            <div class="item-list">
-                <div><strong>1. 李军明天晚上有时间吗？</strong> (Lǐ Jūn míngtiān wǎnshang yǒu shíjiān ma?)</div>
-                <div><strong>2. 明天是谁的生日？</strong> (Míngtiān shì shuí de shēngrì?)</div>
-                <div><strong>3. 他们几点在哪儿一起吃饭？</strong> (Tāmen jǐ diǎn zài nǎr yìqǐ chīfàn?)</div>
-            </div>
+        <div class="sentence-group">
+            <div class="hanzi">嗨，安娜，好久不见，你们开学了吗？</div>
+            <div class="pinyin">Hāi, Ānnà, hǎojiǔ bú jiàn, nǐmen kāixué le ma?</div>
+            <div class="vietnamese">Chào Anna, lâu rồi không gặp, các cậu đã khai giảng chưa?</div>
         </div>
-    </div>
-
-    <!-- FILE 8.9 -->
-    <div class="section-card">
-        <div class="file-tag">🎧 File 8.9.mp3</div>
-        <div class="section-title"><span>Bài 8.9: Đoạn hội thoại 2 — 汉语辅导老师 (Gia sư tiếng Trung)</span></div>
-        <div class="audio-player-box">
-            <label>▶️ Nghe Audio bài 8.9</label>
-            <audio controls preload="none">
-                <source src="8.9.mp3" type="audio/mpeg">
-            </audio>
+        <div class="sentence-group">
+            <div class="hanzi">马克，好久不见，我们开学一个星期了。</div>
+            <div class="pinyin">Mǎkè, hǎojiǔ bú jiàn, wǒmen kāixué yí ge xīngqī le.</div>
+            <div class="vietnamese">Mark, lâu rồi không gặp, bọn tớ khai giảng được một tuần rồi.</div>
         </div>
-        <div class="dialogue-container">
-            <div class="chat-bubble chat-a"><div class="speaker-name">Người A</div><div class="zh-text">安娜，你有汉语辅导老师吗？</div><div class="pinyin-text">Ānnà, nǐ yǒu Hànyǔ fǔdǎo lǎoshī ma?</div><div class="vi-text">Anna, bạn có gia sư tiếng Trung không?</div></div>
-            <div class="chat-bubble chat-b"><div class="speaker-name">安娜 (Anna)</div><div class="zh-text">没有，你呢？</div><div class="pinyin-text">Méiyǒu, nǐ ne?</div><div class="vi-text">Không có, còn bạn?</div></div>
-            <div class="chat-bubble chat-a"><div class="speaker-name">Người A</div><div class="zh-text">我有一个中国朋友，也是我的汉语辅导老师。</div><div class="pinyin-text">Wǒ yǒu yí gè Zhōngguó péngyou, yě shì wǒ de Hànyǔ fǔdǎo lǎoshī.</div><div class="vi-text">Tôi có một người bạn Trung Quốc, cũng là gia sư tiếng Trung của tôi.</div></div>
-            <div class="chat-bubble chat-b"><div class="speaker-name">安娜 (Anna)</div><div class="zh-text">他好吗？</div><div class="pinyin-text">Tā hǎo ma?</div><div class="vi-text">Anh ấy dạy tốt / tính tốt không?</div></div>
-            <div class="chat-bubble chat-a"><div class="speaker-name">Người A</div><div class="zh-text">他很好，今天下午两点我去见他，你有时间一起去吗？</div><div class="pinyin-text">Tā hěn hǎo, jīntiān xiàwǔ liǎng diǎn wǒ qù jiàn tā, nǐ yǒu shíjiān yìqǐ qù ma?</div><div class="vi-text">Anh ấy rất tốt, 2 giờ chiều nay tôi đi gặp anh ấy, bạn có rảnh đi cùng không?</div></div>
-            <div class="chat-bubble chat-b"><div class="speaker-name">安娜 (Anna)</div><div class="zh-text">我有时间，谢谢你。</div><div class="pinyin-text">Wǒ yǒu shíjiān, xièxie nǐ.</div><div class="vi-text">Tôi rảnh, cảm ơn bạn nhé.</div></div>
+        <div class="sentence-group">
+            <div class="hanzi">刚开学很忙吧？</div>
+            <div class="pinyin">Gāng kāixué hěn máng ba?</div>
+            <div class="vietnamese">Mới khai giảng chắc bận lắm nhỉ?</div>
         </div>
-        <div class="questions-box">
-            <h4>❓ Câu hỏi luyện tập (问)</h4>
-            <div class="item-list">
-                <div><strong>1. 安娜有汉语辅导老师吗？</strong> (Ānnà yǒu Hànyǔ fǔdǎo lǎoshī ma?)</div>
-                <div><strong>2. 他们几点去见汉语辅导老师？</strong> (Tāmen jǐ diǎn qù jiàn Hànyǔ fǔdǎo lǎoshī?)</div>
-            </div>
+        <div class="sentence-group">
+            <div class="hanzi">对呀，到了学校第二天就考试，然后买书、上网选课，第三天就开始上课了。</div>
+            <div class="pinyin">Duì ya, dàole xuéxiào dì èr tiān jiù kǎoshì, ránhòu mǎi shū, shàngwǎng xuǎnkè, dì sān tiān jiù kāishǐ shàngkè le.</div>
+            <div class="vietnamese">Đúng vậy, đến trường ngày thứ hai là thi luôn, sau đó mua sách, lên mạng chọn môn, ngày thứ ba là bắt đầu vào học rồi.</div>
         </div>
-    </div>
-
-    <!-- FILE 8.10 -->
-    <div class="section-card">
-        <div class="file-tag green">🎧 File 8.10.mp3</div>
-        <div class="section-title"><span>Bài 8.10: Đoạn hội thoại 3 — 课 (Tiết học của Mary)</span></div>
-        <div class="audio-player-box">
-            <label>▶️ Nghe Audio bài 8.10</label>
-            <audio controls preload="none">
-                <source src="8.10.mp3" type="audio/mpeg">
-            </audio>
+        <div class="sentence-group">
+            <div class="hanzi">明天下了课你去哪儿？</div>
+            <div class="pinyin">Míngtiān xiàle kè nǐ qù nǎr?</div>
+            <div class="vietnamese">Ngày mai học xong cậu đi đâu?</div>
         </div>
-        <div class="dialogue-container">
-            <div class="chat-bubble chat-a"><div class="speaker-name">Người A</div><div class="zh-text">玛丽，明天你有课吗？</div><div class="pinyin-text">Mǎlì, míngtiān nǐ yǒu kè ma?</div><div class="vi-text">Mary, ngày mai bạn có tiết học không?</div></div>
-            <div class="chat-bubble chat-b"><div class="speaker-name">玛丽 (Mary)</div><div class="zh-text">明天上午有课，下午没有课。</div><div class="pinyin-text">Míngtiān shàngwǔ yǒu kè, xiàwǔ méiyǒu kè.</div><div class="vi-text">Sáng mai có tiết, chiều không có tiết.</div></div>
-            <div class="chat-bubble chat-a"><div class="speaker-name">Người A</div><div class="zh-text">上午几点下课？</div><div class="pinyin-text">Shàngwǔ jǐ diǎn xiàkè?</div><div class="vi-text">Buổi sáng mấy giờ tan học?</div></div>
-            <div class="chat-bubble chat-b"><div class="speaker-name">玛丽 (Mary)</div><div class="zh-text">差十分十点下课，有事吗？</div><div class="pinyin-text">Chà shí fēn shí diǎn xiàkè, yǒu shì ma?</div><div class="vi-text">10 giờ kém 10 tan học, có việc gì không?</div></div>
-            <div class="chat-bubble chat-a"><div class="speaker-name">Người A</div><div class="zh-text">没事，我12点下课，中午一起吃饭吧。</div><div class="pinyin-text">Méishì, wǒ shí'èr diǎn xiàkè, zhōngwǔ yìqǐ chīfàn ba.</div><div class="vi-text">Không có gì, tôi 12 giờ tan học, buổi trưa cùng đi ăn cơm nhé.</div></div>
-            <div class="chat-bubble chat-b"><div class="speaker-name">玛丽 (Mary)</div><div class="zh-text">好啊，12点一刻食堂见。</div><div class="pinyin-text">Hǎo a, shí'èr diǎn yí kè shítáng jiàn.</div><div class="vi-text">Được thôi, 12 giờ 15 phút gặp ở nhà ăn.</div></div>
+        <div class="sentence-group">
+            <div class="hanzi">对了，昨天我跟大卫见了面，他说他明天下了课一起去吃午饭，你去吗？</div>
+            <div class="pinyin">Duìle, zuótiān wǒ gēn Dàwèi jiànle miàn, tā shuō tā míngtiān xiàle kè yìqǐ qù chī wǔfàn, nǐ qù ma?</div>
+            <div class="vietnamese">Đúng rồi, hôm qua tớ gặp David, cậu ấy nói ngày mai học xong sẽ cùng đi ăn trưa, cậu đi không?</div>
         </div>
-        <div class="questions-box">
-            <h4>❓ Câu hỏi luyện tập (问)</h4>
-            <div class="item-list">
-                <div><strong>1. 玛丽明天下午有课吗？</strong> (Mǎlì míngtiān xiàwǔ yǒu kè ma?)</div>
-                <div><strong>2. 玛丽明天几点下课？</strong> (Mǎlì míngtiān jǐ diǎn xiàkè?)</div>
-                <div><strong>3. 他们几点去哪儿吃饭？</strong> (Tāmen jǐ diǎn qù nǎr chīfàn?)</div>
-            </div>
+        <div class="sentence-group">
+            <div class="hanzi">好啊，去哪儿吃？</div>
+            <div class="pinyin">Hǎo a, qù nǎr chī?</div>
+            <div class="vietnamese">Được thôi, đi đâu ăn?</div>
+        </div>
+        <div class="sentence-group">
+            <div class="hanzi">就在学校门口，中午十二点半，你别忘了。</div>
+            <div class="pinyin">Jiù zài xuéxiào ménkǒu, zhōngwǔ shí'èr diǎn bàn, nǐ bié wàng le.</div>
+            <div class="vietnamese">Ngay cổng trường, 12 rưỡi trưa, cậu đừng quên nhé.</div>
+        </div>
+        <div class="sentence-group">
+            <div class="hanzi">放心吧，明天中午见。</div>
+            <div class="pinyin">Fàngxīn ba, míngtiān zhōngwǔ jiàn.</div>
+            <div class="vietnamese">Yên tâm đi, trưa mai gặp.</div>
+        </div>
+        <div class="sentence-group">
+            <div class="hanzi">问 1：安娜开学多长时间了。</div>
+            <div class="pinyin">Wèn 1: Ānnà kāixué duō cháng shíjiān le.</div>
+            <div class="vietnamese">Câu hỏi 1: Anna đã khai giảng bao lâu rồi.</div>
+        </div>
+        <div class="sentence-group">
+            <div class="hanzi">2：安娜是什么时候开始上课的。</div>
+            <div class="pinyin">2: Ānnà shì shénme shíhou kāishǐ shàngkè de.</div>
+            <div class="vietnamese">2: Anna bắt đầu vào học khi nào.</div>
+        </div>
+        <div class="sentence-group">
+            <div class="hanzi">3：他们明天中午一起去干什么。</div>
+            <div class="pinyin">3: Tāmen míngtiān zhōngwǔ yìqǐ qù gàn shénme.</div>
+            <div class="vietnamese">3: Trưa mai họ cùng đi làm gì.</div>
         </div>
     </div>
 
-    <footer>
-        <p>Tài liệu do <strong>❤️ TUAN - Học Tiếng Trung</strong> biên soạn dành cho người mới bắt đầu.</p>
-    </footer>
+    <!-- BÀI 4 -->
+    <div class="lesson-card">
+        <h2 class="lesson-title">Bài 4: 看展览 (Xem triển lãm)</h2>
+        <audio controls src="22-12.mp3"></audio>
+        
+        <div class="sentence-group">
+            <div class="hanzi">第二段录音，看展览</div>
+            <div class="pinyin">Dì èr duàn lùyīn, kàn zhǎnlǎn</div>
+            <div class="vietnamese">Đoạn ghi âm thứ hai, xem triển lãm.</div>
+        </div>
+        <div class="sentence-group">
+            <div class="hanzi">大卫，下了课咱们去看展览吧。</div>
+            <div class="pinyin">Dàwèi, xiàle kè zánmen qù kàn zhǎnlǎn ba.</div>
+            <div class="vietnamese">David, học xong chúng ta đi xem triển lãm nhé.</div>
+        </div>
+        <div class="sentence-group">
+            <div class="hanzi">你开什么玩笑，下了课我得去食堂吃饭，我快饿死了。</div>
+            <div class="pinyin">Nǐ kāi shénme wánxiào, xiàle kè wǒ děi qù shítáng chīfàn, wǒ kuài è sǐ le.</div>
+            <div class="vietnamese">Cậu đùa gì thế, học xong tớ phải đi nhà ăn ăn cơm, tớ sắp chết đói rồi.</div>
+        </div>
+        <div class="sentence-group">
+            <div class="hanzi">你早上又没吃早饭吧？</div>
+            <div class="pinyin">Nǐ zǎoshang yòu méi chī zǎofàn ba?</div>
+            <div class="vietnamese">Sáng nay cậu lại không ăn sáng đúng không?</div>
+        </div>
+        <div class="sentence-group">
+            <div class="hanzi">是啊，早上起了床就来上课了，哪有时间吃早饭。</div>
+            <div class="pinyin">Shì a, zǎoshang qǐle chuáng jiù lái shàngkè le, nǎ yǒu shíjiān chī zǎofàn.</div>
+            <div class="vietnamese">Đúng vậy, sáng ngủ dậy là đến lớp luôn, làm gì có thời gian ăn sáng.</div>
+        </div>
+        <div class="sentence-group">
+            <div class="hanzi">吃了午饭你打算干什么？</div>
+            <div class="pinyin">Chīle wǔfàn nǐ dǎsuàn gàn shénme?</div>
+            <div class="vietnamese">Ăn trưa xong cậu định làm gì?</div>
+        </div>
+        <div class="sentence-group">
+            <div class="hanzi">下午马克约我去打篮球呢。</div>
+            <div class="pinyin">Xiàwǔ Mǎkè yuē wǒ qù dǎ lánqiú ne.</div>
+            <div class="vietnamese">Buổi chiều Mark hẹn tớ đi đánh bóng rổ.</div>
+        </div>
+        <div class="sentence-group">
+            <div class="hanzi">天气这么热，打什么篮球呀，咱们去看展览吧。</div>
+            <div class="pinyin">Tiānqì zhème rè, dǎ shénme lánqiú ya, zánmen qù kàn zhǎnlǎn ba.</div>
+            <div class="vietnamese">Thời tiết nóng thế này, đánh bóng rổ gì chứ, chúng ta đi xem triển lãm đi.</div>
+        </div>
+        <div class="sentence-group">
+            <div class="hanzi">要是我不去打篮球，马克会不会生气呀？</div>
+            <div class="pinyin">Yàoshi wǒ bù qù dǎ lánqiú, Mǎkè huì bù huì shēngqì ya?</div>
+            <div class="vietnamese">Nếu tớ không đi đánh bóng rổ, Mark có tức giận không nhỉ?</div>
+        </div>
+        <div class="sentence-group">
+            <div class="hanzi">他生什么气呀，你叫他跟咱们一起去吧。</div>
+            <div class="pinyin">Tā shēng shénme qì ya, nǐ jiào tā gēn zánmen yìqǐ qù ba.</div>
+            <div class="vietnamese">Cậu ấy tức giận gì chứ, cậu rủ cậu ấy đi cùng chúng ta đi.</div>
+        </div>
+        <div class="sentence-group">
+            <div class="hanzi">好，我这就给他发个微信问问他。</div>
+            <div class="pinyin">Hǎo, wǒ zhè jiù gěi tā fā ge wēixìn wènwen tā.</div>
+            <div class="vietnamese">Được, tớ sẽ gửi Wechat hỏi cậu ấy ngay đây.</div>
+        </div>
+        <div class="sentence-group">
+            <div class="hanzi">问 1：大卫下了课要先去干什么？</div>
+            <div class="pinyin">Wèn 1: Dàwèi xiàle kè yào xiān qù gàn shénme?</div>
+            <div class="vietnamese">Câu hỏi 1: David học xong sẽ đi làm gì trước?</div>
+        </div>
+        <div class="sentence-group">
+            <div class="hanzi">2：大卫今天吃早饭了吗？</div>
+            <div class="pinyin">2: Dàwèi jīntiān chī zǎofàn le ma?</div>
+            <div class="vietnamese">2: Hôm nay David đã ăn sáng chưa?</div>
+        </div>
+        <div class="sentence-group">
+            <div class="hanzi">3：大卫发微信给马克问什么？</div>
+            <div class="pinyin">3: Dàwèi fā wēixìn gěi Mǎkè wèn shénme?</div>
+            <div class="vietnamese">3: David gửi Wechat cho Mark để hỏi gì?</div>
+        </div>
+    </div>
 </div>
+
+<script>
+    // Javascript để tạo chức năng Ẩn/Hiện cho người học
+    function toggleElement(className) {
+        const elements = document.getElementsByClassName(className);
+        for (let i = 0; i < elements.length; i++) {
+            if (elements[i].style.display === "none") {
+                elements[i].style.display = "block";
+            } else {
+                elements[i].style.display = "none";
+            }
+        }
+    }
+</script>
 
 </body>
 </html>
